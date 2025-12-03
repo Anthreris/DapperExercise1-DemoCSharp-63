@@ -49,3 +49,4 @@ C:\Users\Garrett Chitwood\Desktop\repos\DapperDemoCSharp-63\DapperDemoCSharp-63\
 C:\Users\Garrett Chitwood\Desktop\repos\DapperDemoCSharp-63\DapperDemoCSharp-63\obj\Debug\net9.0\DapperDemoCSharp-63.pdb
 C:\Users\Garrett Chitwood\Desktop\repos\DapperDemoCSharp-63\DapperDemoCSharp-63\obj\Debug\net9.0\DapperDemoCSharp-63.genruntimeconfig.cache
 C:\Users\Garrett Chitwood\Desktop\repos\DapperDemoCSharp-63\DapperDemoCSharp-63\obj\Debug\net9.0\ref\DapperDemoCSharp-63.dll
+C:\Users\Garrett Chitwood\Desktop\repos\DapperDemoCSharp-63\DapperDemoCSharp-63\obj\Debug\net9.0\DapperDemoCSharp-63.sourcelink.json

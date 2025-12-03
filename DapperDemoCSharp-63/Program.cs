@@ -13,13 +13,29 @@ var config = new ConfigurationBuilder()
 string connString = config.GetConnectionString("DefaultConnection");
 IDbConnection conn = new MySqlConnection(connString);
 
-var departmentRepo = new DepartmentRepository(conn);
+#region Department Section
+// var departmentRepo = new DepartmentRepository(conn);
+//
+// //departmentRepo.InsertDepartment("CSharp-63");
+//
+// var departments = departmentRepo.GetAllDepartments();
+//
+// foreach (var dep in departments)
+// {
+//     Console.WriteLine($"Name: {dep.Name} | ID: {dep.DepartmentID}");
+// }
+#endregion
 
-//departmentRepo.InsertDepartment("CSharp-63");
+var productRepository = new ProductRepository(conn);
 
-var departments = departmentRepo.GetAllDepartments();
+var products = productRepository.GetAllProducts();
 
-foreach (var dep in departments)
+foreach (var product in products)
 {
-    Console.WriteLine($"Name: {dep.Name} | ID: {dep.DepartmentID}");
+    Console.WriteLine();
+    Console.WriteLine($"Product ID: {product.Name} | Product ID: {product.ProductID} | Price: {product.Price} |" +
+    $" Category ID: {product.CategoryID} | OnSale: {product.OnSale} | Amount of Product: {product.StockLevel}");
+    Console.WriteLine();
+    Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    
 }
