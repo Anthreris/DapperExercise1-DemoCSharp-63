@@ -25,7 +25,8 @@ public class ProductRepository : IProductRepository
 
     public void UpdateProduct(string name, double price, int categoryId, bool OnSale, int stockLevel)
     {
-        _connection.Execute("UPDATE products SET Name = @name, Price = @price, CategoryID = @categoryId, OnSale = @onSale, StockLevel = @stockLevel", new {});
+        _connection.Execute("UPDATE products SET Name = @name, Price = @price, CategoryID = @categoryId, OnSale = @onSale, StockLevel = @stockLevel", 
+            new {name, price, categoryId, OnSale, stockLevel});
     }
 
     public void DeleteProduct(int productId)
