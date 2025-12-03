@@ -19,16 +19,17 @@ public class ProductRepository : IProductRepository
 
     public void CreateProduct(string name, double price, int categoryId, bool OnSale, int stockLevel)
     {
-        throw new NotImplementedException();
+        _connection.Execute("INSERT INTO products (Name, Price, CategoryID, OnSale, StockLevel) Values (@name, @price, @categoryId, @onSale, @stockLevel)",
+            new {name, price, categoryId, OnSale, stockLevel});
     }
 
     public void UpdateProduct(string name, double price, int categoryId, bool OnSale, int stockLevel)
     {
-        throw new NotImplementedException();
+        _connection.Execute("UPDATE products SET Name = @name, Price = @price, CategoryID = @categoryId, OnSale = @onSale, StockLevel = @stockLevel", new {});
     }
 
     public void DeleteProduct(int productId)
     {
-        throw new NotImplementedException();
+        _connection.Execute("", new {});
     }
 }
