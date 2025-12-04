@@ -31,8 +31,8 @@ public class ProductRepository : IProductRepository
 
     public void DeleteProduct(int productId)
     {
-        _connection.Execute("DELETE FROM reviews WHERE = ProductID = @productId;", new { });
-        _connection.Execute("DELETE FROM sales WHERE = ProductID = @productId", new { });
-        _connection.Execute("DELETE FROM products WHERE = ProductID = @productId", new { });
+        _connection.Execute("DELETE FROM reviews WHERE = ProductID = @productId;", new { productId });
+        _connection.Execute("DELETE FROM sales WHERE = ProductID = @productId", new { productId });
+        _connection.Execute("DELETE FROM products WHERE = ProductID = @productId", new { productId });
     }
 }

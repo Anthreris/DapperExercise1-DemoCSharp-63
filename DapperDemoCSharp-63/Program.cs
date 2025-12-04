@@ -26,16 +26,16 @@ IDbConnection conn = new MySqlConnection(connString);
 // }
 #endregion
 
+#region Product Section
 var productRepository = new ProductRepository(conn);
 
 var products = productRepository.GetAllProducts();
 
 foreach (var product in products)
 {
-    Console.WriteLine();
-    Console.WriteLine($"Product ID: {product.Name} | Product ID: {product.ProductID} | Price: {product.Price} |" +
-    $" Category ID: {product.CategoryID} | OnSale: {product.OnSale} | Amount of Product: {product.StockLevel}");
-    Console.WriteLine();
     Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------");
-    
+    Console.WriteLine($"Product Name: {product.Name} | Product ID: {product.ProductID} | Price: {product.Price} |" +
+    $" Category ID: {product.CategoryID} | OnSale: {product.OnSale} | Amount of Product: {product.StockLevel}");
 }
+#endregion
+
