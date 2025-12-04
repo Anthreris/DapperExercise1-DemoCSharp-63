@@ -23,16 +23,16 @@ public class ProductRepository : IProductRepository
             new {name, price, categoryId, OnSale, stockLevel});
     }
 
-    public void UpdateProduct(string name, double price, int categoryId, bool OnSale, int stockLevel)
+    public void UpdateProduct(string name, double price, int categoryId, bool OnSale, int stockLevel, int productId)
     {
-        _connection.Execute("UPDATE products SET Name = @name, Price = @price, CategoryID = @categoryId, OnSale = @onSale, StockLevel = @stockLevel", 
-            new {name, price, categoryId, OnSale, stockLevel});
+        _connection.Execute("UPDATE products SET Name = @name, Price = @price, CategoryID = @categoryId, OnSale = @onSale, StockLevel = @stockLevel WHERE ProductID = @productId", 
+            new {name, price, categoryId, OnSale, stockLevel, productId});
     }
 
     public void DeleteProduct(int productId)
     {
-        _connection.Execute("DELETE FROM reviews WHERE = ProductID = @productId;", new { productId });
-        _connection.Execute("DELETE FROM sales WHERE = ProductID = @productId", new { productId });
-        _connection.Execute("DELETE FROM products WHERE = ProductID = @productId", new { productId });
+        _connection.Execute("DELETE FROM reviews WHERE ProductID = @productId;", new { productId });
+        _connection.Execute("DELETE FROM sales WHERE ProductID = @productId", new { productId });
+        _connection.Execute("DELETE FROM products WHERE ProductID = @productId", new { productId });
     }
 }
